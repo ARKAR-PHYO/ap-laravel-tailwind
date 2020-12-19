@@ -14,7 +14,7 @@ class AddCategoryIdToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->unsignedBigInteger('cagegory_id');
+            $table->unsignedBigInteger('category_id');
         });
     }
 

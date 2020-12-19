@@ -7,7 +7,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PostSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,11 +16,9 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('posts')->insert([
-            'name' => Str::random(10),
-            'description' => Str::random(100),
+        DB::table('categories')->insert([
+            'name' => Str::random(4),
             'created_at' => Carbon::now()->toDateTimeString(),
-            'cagegory_id' => rand(1,4),
         ]);
     }
 }

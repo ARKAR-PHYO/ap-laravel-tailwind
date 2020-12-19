@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::resources([
     // '/' => HomeController::class,
-    'posts' => HomeController::class,
+    'posts' => PostController::class,
     'categories' => CategoriesController::class,
 ]);
+
+Route::any('{slug}', function() {
+    return view('category.categoryIndex');
+});

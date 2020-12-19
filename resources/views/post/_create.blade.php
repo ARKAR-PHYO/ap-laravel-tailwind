@@ -34,6 +34,20 @@ APLaravel
                         </div>
                         @enderror
                     </div>
+                    <div class="mb-6">
+                        <label class="block mb-2 text-sm font-bold text-gray-900" for="description">{{ __('Select Category') }}</label>
+                        <select name="categories" id="categories" class="w-full px-3 py-2 mb-3 text-gray-900 border rounded shadow appearance-none border-red">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                        {{-- <input class="w-full px-3 py-2 mb-3 text-gray-900 border rounded shadow appearance-none border-red @error('description') is-invalid @enderror" id="description" type="text" name="description"> --}}
+                        @error('description')
+                        <div class="mt-3 text-red-500" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @enderror
+                    </div>
                     <div class="flex items-center justify-between">
                         <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-900" type="submit">{{ __('ဘာလာလာ သွင်းကွာ 😎') }}</button>
                     </div>
@@ -43,3 +57,4 @@ APLaravel
     </div>
 </div>
 @endsection
+

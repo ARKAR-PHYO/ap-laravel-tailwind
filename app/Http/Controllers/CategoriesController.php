@@ -24,7 +24,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        // return view('category._createCategory');
     }
 
     /**
@@ -39,7 +39,7 @@ class CategoriesController extends Controller
             'name' => 'required'
         ]);
         Category::create($request->only('name'));
-        return back();
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -48,7 +48,7 @@ class CategoriesController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(category $category)
+    public function show($id)
     {
         //
     }
@@ -61,7 +61,7 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        return view('category.categoryIndex', ['category' => Category::findOrFail($id)]);
+        //
     }
 
     /**
@@ -84,6 +84,7 @@ class CategoriesController extends Controller
      */
     public function destroy(category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('categories.index');
     }
 }

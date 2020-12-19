@@ -3,11 +3,10 @@
 APLaravel
 @endsection
 @section('content')
-
 <div class="flex flex-col w-full min-h-screen bg-grey-300">
     <div class="container flex-grow pt-6 pb-8 mx-auto sm:px-4">
         <div class="mb-9">
-            <a href="{{ route('posts.create') }}" class="px-6 py-4 bg-green-300 border border-green-900 rounded hover:bg-green-400">{{ __('ပိုစ့် အသစ်ရမ်းလုပ်မယ်') }}</a>
+            <a href="{{ route('posts.create') }}" class="px-6 py-4 bg-green-300 border border-green-900 rounded hover:bg-green-400">{{ __('Create New Post') }}</a>
         </div>
         <div class="mb-6 bg-white border-t border-b shadow sm:border-l sm:border-r sm:rounded">
             <div class="px-6 bg-gray-300">
